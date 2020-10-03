@@ -9,18 +9,36 @@
         <br/>
         <form>
             First name:<br />
-            <input type="text" name="fname"><br />
+            <input type="text" id="fname" name="fname" required><br />
             Last name:<br />
-            <input type="text" name="lname"><br/>
+            <input type="text" id="lname" name="lname" required><br/>
             Email:<br/>
-            <input type="text" name="email"><br/>
+            <input type="text" id="email" name="email" required><br/>
             Phone number:<br/>
-            <input type="text" name="number"><br/>
+            <input type="text" id="number" name="number" required><br/>
             Postal code:<br/>
-            <input type="text" name="pcode"><br/>
+            <input type="text" id="pcode" name="pcode" ><br/>
             <br/>
+            <button onclick="allLetter(fname);allLetter(lname);">validate</button>
             <input type="submit">
-
         </form>
+
+        <p id="p01"></p>
+
+        <script type="text/javascript">
+            function allLetter(input)
+                { 
+                
+                var letters = /^[A-Za-z]+$/;
+                if (!input.value.match(letters))
+                {
+                alert('first and Last name fields must not contain letters')    
+                }
+ 
+
+                }
+
+         </script>
+        
     </body>
 </html>

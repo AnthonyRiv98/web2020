@@ -20,24 +20,39 @@
             <input type="text" id="pcode" name="pcode" ><br/>
             <br/>
             <button onclick="allLetter(fname);allLetter(lname);">validate</button>
-            <input type="submit">
+            <input onsubmit="check(flag);" type="submit">
         </form>
 
         <p id="p01"></p>
 
         <script type="text/javascript">
+            var flag = allLetter(input);
             function allLetter(input)
                 { 
-                
                 var letters = /^[A-Za-z]+$/;
                 if (!input.value.match(letters))
+                    {
+                    alert('First and Last name fields must not contain letters') ;
+                    return false;   
+                    }
+                else
                 {
-                alert('first and Last name fields must not contain letters')    
+                    flag == 1;
+                    return flag;
                 }
- 
-
                 }
-
+            function check(flag)
+            {
+                if (flag == 1) 
+                {
+                    return true;
+                }
+                else
+                {
+                    alert('Must validate before submitting');
+                    return false;
+                }
+            }
          </script>
         
     </body>

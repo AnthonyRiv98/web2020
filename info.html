@@ -7,7 +7,7 @@
     
     <body>
         <br/>
-        <form>
+        <form action="action.php" method="post">
             First name:<br />
             <input type="text" id="fname" name="fname" required><br />
             Last name:<br />
@@ -19,8 +19,8 @@
             Postal code:<br/>
             <input type="text" id="pcode" name="pcode" ><br/>
             <br/>
-            <button onclick="allLetter(fname);allLetter(lname);">validate</button>
-            <input onsubmit="check(flag);" type="submit">
+            <button type="submit" onclick="allLetter(fname);allLetter(lname);">validate</button>
+
         </form>
 
         <p id="p01"></p>

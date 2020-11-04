@@ -19,12 +19,19 @@
              if (empty($_POST["number"])) {
                $number = "";
              } else {
-               $number = test_input($_POST["website"]);
+               $number = test_input($_POST["number"]);
                // check if URL address syntax is valid
-               if (!preg_match('/^[0-9]*$/',$website)) {
+               if (!preg_match('/^[0-9]*$/',$number)) {
                  $numberErr = "Invalid URL";
                }    
              }
+             
+             function test_input($data) {
+              $data = trim($data);
+              $data = stripslashes($data);
+              $data = htmlspecialchars($data);
+              return $data;
+            }
            
              echo ($email);
              echo($number);
